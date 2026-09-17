@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>CourseraPilot</title><link rel="stylesheet" href="popup.css"></head>
+<body><header><div class="brand"><img src="icons/logo.svg" width="42" height="42" alt=""><div><strong>CourseraPilot</strong><span>BY VEDHANT KHAJURIA · v1.5.1</span></div></div><h1>Your pace.<br>Less clicking.</h1></header>
+<form id="settings">
+<label>Playback speed (×)<input id="fast" type="number" min="1" max="16" step="0.5" value="16" required></label>
+<p>On other websites: speed only for this tab. Coursera automation is available only on Coursera lessons.</p>
+<div id="course-settings">
+<label class="check"><input id="externalSpeed" type="checkbox"> Use my external speed extension instead</label>
+<p>Built-in mode: disable other speed extensions on this tab to avoid conflicts.</p>
+<label>Final speed<input id="slow" type="number" min="1" max="16" step="0.5" value="3" required></label>
+<label>Switch after (%)<input id="threshold" type="number" min="1" max="99" value="70" required></label>
+<label>Go to next video at (%)<input id="advanceAt" type="number" min="1" max="100" value="96" required></label>
+<label>Reading wait (seconds)<input id="readingSeconds" type="number" min="5" max="600" value="15" required></label>
+<label class="check"><input id="autoNext" type="checkbox" checked> Open the next lesson automatically</label>
+<label class="check"><input id="autoRead" type="checkbox" checked> Mark readings complete automatically</label>
+</div>
+<div class="actions"><button type="submit">Start this course</button><button type="button" id="stop">Stop</button></div>
+</form><p id="status" role="status">Open a Coursera video or reading lesson.</p><footer>Starting opens <a href="https://github.com/vedhant-khajuria" target="_blank" rel="noopener noreferrer">Vedhant Khajuria's GitHub</a> in a new tab. Your course stays open.<br><br>Independent project. Not affiliated with Coursera. Stops at assessments; Coursera determines completion credit.<br><a href="https://github.com/vedhant-khajuria/courserapilot" target="_blank" rel="noopener noreferrer">Project & updates ↗</a></footer>
+<script src="core.js"></script><script src="popup.js"></script></body></html>

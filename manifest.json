@@ -1,0 +1,30 @@
+{
+  "manifest_version": 3,
+  "name": "CourseraPilot",
+  "author": "Vedhant Khajuria",
+  "homepage_url": "https://github.com/vedhant-khajuria/courserapilot",
+  "icons": { "16": "icons/icon16.png", "32": "icons/icon32.png", "48": "icons/icon48.png", "128": "icons/icon128.png" },
+  "version": "1.5.1",
+  "minimum_chrome_version": "119",
+  "description": "Built-in video speed control for supported websites, plus Coursera-only lesson navigation, reading controls and a 70% speed switch.",
+  "permissions": ["storage", "activeTab", "scripting"],
+  "host_permissions": ["https://*/*", "http://*/*"],
+  "background": { "service_worker": "background.js" },
+  "action": { "default_popup": "popup.html", "default_title": "CourseraPilot by Vedhant Khajuria", "default_icon": { "16": "icons/icon16.png", "32": "icons/icon32.png", "48": "icons/icon48.png", "128": "icons/icon128.png" } },
+  "content_scripts": [{
+    "matches": ["https://*/*", "http://*/*"],
+    "js": ["speed-controller.js"],
+    "world": "ISOLATED",
+    "all_frames": true,
+    "match_origin_as_fallback": true,
+    "run_at": "document_start"
+  }, {
+    "matches": ["https://*/*", "http://*/*"],
+    "js": ["speed-only.js"],
+    "run_at": "document_idle"
+  }, {
+    "matches": ["https://*.coursera.org/*"],
+    "js": ["core.js", "lesson-state.js", "content.js"],
+    "run_at": "document_idle"
+  }]
+}
