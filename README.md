@@ -1,52 +1,156 @@
-# CourseraPilot · v1.5.1
+<div align="center">
 
-## New: browser-wide speed controller, Coursera-only course automation
+# 🚀 CourseraPilot
 
-On an ordinary HTTP/HTTPS website, open the extension, choose a playback speed, and press **Start speed control**. This applies a constant speed to a supported video in that tab; it does not click Next, mark readings, skip polls, or start paused videos. Press Play on the website yourself. Stop restores the original speed. Leaving or reloading the page ends the general speed-only session.
+### Automate your Coursera. Take control of your playback.
 
-On Coursera lesson pages, the full course controls remain available: 16× before 70%, 3× afterwards, and auto-next at 96%. For existing settings, **uncheck “Use my external speed extension instead”** to enable the built-in controller. Disable competing speed extensions for that tab. Built-in mode is the default for fresh settings.
+A Chrome extension for fewer repetitive clicks, flexible video speeds, and smoother course navigation.
 
-Chrome will request access to HTTP/HTTPS websites so the speed controller can operate there, including accessible embedded frames. Course navigation scripts remain restricted to Coursera. Chrome internal pages, the Chrome Web Store, and unsupported/custom media players cannot be controlled. Speed-only sessions are opt-in per tab, not an automatic speed change across all open tabs.
+**Created by [Vedhant Khajuria](https://github.com/vedhant-khajuria)**
 
-The controller now executes in Chrome's isolated extension environment and intercepts speed-reset events only for the video it controls. Other media events remain available. Do not assume universal compatibility; browser support, buffering, and page-specific behavior can affect playback.
+[![Version](https://img.shields.io/badge/version-1.5.1-254bff?style=for-the-badge)](https://github.com/vedhant-khajuria/courserapilot)
+[![Chrome](https://img.shields.io/badge/Chrome-119%2B-4285F4?style=for-the-badge&logo=googlechrome&logoColor=white)](https://www.google.com/chrome/)
+[![Website](https://img.shields.io/badge/Visit-Website-152022?style=for-the-badge&logo=netlify&logoColor=white)](https://courserapilot.netlify.app/)
 
-Created by **Vedhant Khajuria**. An independent Chrome extension for Coursera video and reading navigation.
+[**Explore the Website**](https://courserapilot.netlify.app/) · [**Download Extension**](./CourseraPilot-extension.zip) · [**Report an Issue**](https://github.com/vedhant-khajuria/courserapilot/issues)
 
-- Creator: https://github.com/vedhant-khajuria
-- Project and downloads: https://github.com/vedhant-khajuria/courserapilot
+</div>
 
-## Install or update
+---
 
-1. Extract **CourseraPilot-extension.zip** into a permanent folder.
-2. Open `chrome://extensions` in Chrome 119 or newer. Turn on **Developer mode**.
-3. Choose **Load unpacked** and select the extracted folder containing manifest.json. If already installed, replace the old files and click Reload instead.
-4. Refresh your Coursera tab, open a video or reading lesson, then open **CourseraPilot**.
-5. Choose settings and press **Start this course**. Each successful Start opens Vedhant Khajuria's GitHub profile in a new tab. Your course tab remains open and continues running. Status checks, Stop, and automatic lesson changes do not open extra profile tabs.
+## ✨ What is CourseraPilot?
 
-## Playback and navigation
+CourseraPilot helps you work through college-assigned Coursera courses, skill-development programs, and personal learning with fewer repetitive clicks. It combines **Coursera-only course automation** with an **opt-in video speed controller for other supported websites**.
 
-External speed mode is optional on Coursera. It leaves speed settings untouched so your existing speed extension can control them. Set that extension to **1600%** for 16× playback. Changing it to **300%** at 70% is manual in external mode; CourseraPilot does not remotely set the other extension's speed. Reset to 1600% on the next lesson as needed.
+You remain responsible for learning the material, completing assessments, and following the rules that apply to your course.
 
-To use the built-in speed schedule, turn off external mode and disable the competing speed extension on this tab. Defaults are 16× before 70% and 3× afterwards. Compatibility varies by player; the built-in controller has not been verified in every Coursera course. The status panel reports native speed and measured timeline progression separately.
+## 🎯 Two modes. Clear boundaries.
 
-Auto-next opens the next lesson at **96%** by default. It does not wait for the video to end or Coursera to confirm credit. Change the threshold or turn off auto-next in the popup. Explicitly completed lessons are skipped immediately when a supported completion indicator is recognized.
+| Feature | Coursera lessons | Other supported websites |
+| :--- | :---: | :---: |
+| Built-in video speed control | ✅ | ✅ |
+| Automatic 16× → 3× speed schedule | ✅ | — |
+| Auto-next at 96% | ✅ | — |
+| Skip lessons marked completed | ✅ | — |
+| Reading completion controls | ✅ | — |
+| Skip supported optional in-video polls | ✅ | — |
+| On-page Stop button | ✅ | ✅ |
 
-Readings wait 15 seconds by default, use the visible Mark as read/complete control, and wait for a recognized completion indicator before advancing. Optional in-video polls with an explicit Skip button can be skipped. Quizzes, assignments and unsupported lesson pages require manual input; the extension does not answer or submit assessments.
+**Other websites use a constant speed that you choose.** They do not receive course automation, automatic navigation, or reading actions. Start speed control separately for each tab and press Play on the website yourself.
 
-## Controls and limits
+## ⚡ Default Coursera settings
 
-Keep the course tab open and the computer awake. Press Play once if the browser blocks autoplay. The floating panel has a Stop button. External mode never restores or changes your externally chosen speed on Stop. Built-in mode releases its speed overrides and restores the previous rate.
+| Setting | Default |
+| :--- | :--- |
+| Initial video speed | **16×** |
+| Speed-switch point | **70%** of the video timeline |
+| Final video speed | **3×** |
+| Advance to the next lesson | **96%** of the video timeline |
+| Reading delay | **15 seconds** |
+| Speed mode for fresh settings | **Built-in controller** |
 
-English page labels and unambiguous Next buttons are supported. Missing controls, changed layouts, ambiguous navigation, device sleep, buffering and inaccessible third-party frames can require manual intervention. Navigation stays within the selected course. After a manual assessment, open the next supported lesson and press Start again.
+Adjust these settings in the extension popup. Existing saved preferences are preserved.
 
-Coursera decides completion credit. The 70%/96% strategy is user-configurable and does not guarantee lesson credit, course completion, or a certificate. CourseraPilot is not affiliated with, endorsed by or sponsored by Coursera.
+## 📦 Downloads
 
-## Privacy
+| Package | Contents |
+| :--- | :--- |
+| [**CourseraPilot-extension.zip**](./CourseraPilot-extension.zip) | Installable unpacked Chrome extension, icons, and instructions |
+| [**CourseraPilot-website.zip**](./CourseraPilot-website.zip) | Responsive animated website, local assets, SEO metadata, and publishing instructions |
 
-Settings are stored locally in Chrome. Session state is stored in the course tab. No analytics, login collection or external telemetry is included. Course controls operate on Coursera; speed-only controls can operate on other HTTP/HTTPS websites when started. Clicking Start opens the creator's GitHub profile, which is subject to GitHub's own privacy practices.
+Prefer a preview? Visit **[courserapilot.netlify.app](https://courserapilot.netlify.app/)**.
 
-## Developer verification
+## 🛠️ Install the extension
 
-Release verification: 30 automated tests passed, covering speed changes, scope separation, navigation, external mode, and creator-profile behavior. A local browser media test verified acceleration, the 70% switch, reset resistance and restoration. This does not guarantee compatibility with every live course or player.
+1. Download **CourseraPilot-extension.zip** and extract it into a permanent folder.
+2. Open `chrome://extensions` in **Chrome 119 or later**.
+3. Enable **Developer mode** in the top-right corner.
+4. Click **Load unpacked** and select the extracted folder containing `manifest.json`.
+5. Refresh the website or Coursera lesson you want to use.
+6. Open **CourseraPilot** from Chrome’s extensions menu.
 
-The separate **CourseraPilot-website.zip** contains the animated static website and its own publishing instructions. It is not automatically deployed.
+> **Updating an existing installation?** Replace the files in the loaded folder, click **Reload** on the extension, and refresh your browser tabs.
+
+## ▶️ Start a session
+
+### On Coursera
+
+1. Open a video or reading lesson.
+2. Choose your speeds, switch point, and auto-next threshold.
+3. For built-in speed control, leave **Use my external speed extension instead** unchecked.
+4. Disable competing speed extensions for that tab, then click **Start this course**.
+5. Keep the course tab open and use the on-page panel to monitor progress or stop.
+
+Quizzes, assignments, and unsupported lesson pages require your input. After completing them, open the next supported lesson and start again.
+
+### On another website
+
+1. Open a supported video on an HTTP/HTTPS website.
+2. Choose a playback speed between **1× and 16×**.
+3. Click **Start speed control**, then play the video on the website.
+4. Click **Stop** to release control and restore the previous speed.
+
+Reloading or leaving the page ends the general speed-only session.
+
+### Using an external speed extension
+
+External speed mode is optional on Coursera and leaves your other extension’s speed settings untouched. Set **1600%** for 16× playback and manually change to **300%** at 70% if you want the final section at 3×. CourseraPilot does not remotely change the other extension’s settings.
+
+## 🔒 Privacy, permissions & control
+
+- **Local preferences:** Settings stay in Chrome; course session state stays in the course tab.
+- **No built-in analytics:** CourseraPilot does not collect login details or include external telemetry.
+- **Website access:** HTTP/HTTPS permissions let the speed controller find supported videos, including accessible embedded players.
+- **Opt-in operation:** Other websites are not automatically accelerated. Start a session for the tab you want to control.
+- **Coursera-only automation:** Navigation, reading controls, and poll skipping remain restricted to Coursera.
+- **Creator link:** Every successful press of Start opens [Vedhant Khajuria’s GitHub profile](https://github.com/vedhant-khajuria) in a separate tab. Your original tab stays open. Status checks, Stop, and automatic lesson changes do not open extra profile tabs.
+
+These safeguards do not guarantee account safety or approval under a platform’s or institution’s rules. GitHub visits are subject to GitHub’s own privacy practices.
+
+## 💡 Troubleshooting
+
+| Problem | What to check |
+| :--- | :--- |
+| Speed stays normal | Disable competing controllers, uncheck external mode on Coursera, reload the extension, and refresh the page. |
+| Video will not play | Press Play once on the website; the browser may block autoplay. |
+| Native speed is high but measured speed is low | Check buffering, a paused player, or an in-video prompt. A speed setting alone does not prove playback is advancing. |
+| Next lesson does not open | Check for a missing, disabled, or ambiguous Next button, or a page requiring manual input. |
+| Extension cannot access the page | Confirm site access. Chrome internal pages, the Chrome Web Store, and some custom players are unsupported. |
+| A reading does not advance | Check its completion control. Readings wait for a recognized completion indicator. |
+
+## 📌 Important limits
+
+- **Coursera decides completion credit.** Leaving at 96% does not guarantee a lesson is credited.
+- Course completion, certificates, and compatibility with every player are **not guaranteed**.
+- The extension does not answer or submit quizzes, exams, projects, or assignments.
+- Standard English labels and supported completion indicators are required for course automation.
+- Page changes, inaccessible frames, device sleep, and browser throttling may interrupt a session.
+- CourseraPilot is an **independent project**, not affiliated with, endorsed by, or sponsored by Coursera.
+
+## 🌐 Website
+
+**[https://courserapilot.netlify.app/](https://courserapilot.netlify.app/)**
+
+The website package includes an animated product preview, responsive layouts, reduced-motion support, installation instructions, FAQs, social-sharing artwork, structured data, and a sitemap. It uses static HTML, CSS, and JavaScript with no build step.
+
+If you redeploy the website, make sure its canonical URL, social-image URLs, and sitemap settings match the deployment domain. SEO features support discoverability; they do not guarantee indexing or rankings.
+
+## ✅ Verification
+
+Release checks included **30 automated tests** covering speed changes, website/course scope separation, navigation, external mode, and creator-profile behavior. A local browser media test verified acceleration, the 70% speed switch, resistance to simulated speed resets, and restoration on Stop.
+
+These checks do not replace testing on your particular live course or video player.
+
+## 🤝 Feedback
+
+Found a problem? [Open an issue](https://github.com/vedhant-khajuria/courserapilot/issues) with your Chrome version, extension version, the affected website, and the message shown in the status panel. Avoid including passwords, login details, or private course information.
+
+---
+
+<div align="center">
+
+**Built by [Vedhant Khajuria](https://github.com/vedhant-khajuria)**
+
+[Website](https://courserapilot.netlify.app/) · [GitHub Repository](https://github.com/vedhant-khajuria/courserapilot) · [Creator Profile](https://github.com/vedhant-khajuria)
+
+</div>
